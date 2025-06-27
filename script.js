@@ -119,17 +119,17 @@ const navbar = document.getElementById('navbar');
 let lastScrollTop = 0;
 
 function handleNavbarScroll() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-        // Scrolling down
-        navbar.style.transform = 'translateY(-100%)';
+    if (window.innerWidth > 900) { // Only on desktop
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+            navbar.style.transform = 'translateY(-100%)';
+        } else {
+            navbar.style.transform = 'translateY(0)';
+        }
+        lastScrollTop = scrollTop;
     } else {
-        // Scrolling up
-        navbar.style.transform = 'translateY(0)';
+        navbar.style.transform = 'translateY(0)'; // Always visible on mobile
     }
-    
-    lastScrollTop = scrollTop;
 }
 
 // Scroll to Top Button

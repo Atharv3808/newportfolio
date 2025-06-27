@@ -1365,6 +1365,15 @@ section {
     .hero-video { width: 90vw; max-width: 100%; }
     .hero-container { flex-direction: column; align-items: center;margin-top: 80px; }
     .hero-visual { margin-top: 1.5rem; }
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        transform: translateY(0) !important;
+        transition: none;
+        z-index: 1000;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1391,6 +1400,10 @@ section {
     .intro, .hero-fun-tagline { font-size: 1rem; padding: 0 5px; }
     .social-icons { gap: 0.7rem; }
     .ai-bot { bottom: 10px; right: 10px; font-size: 2rem; }
+    .floating-resume,
+    .scroll-top {
+        display: none !important;
+    }
 }
 
 @keyframes floatGif {
